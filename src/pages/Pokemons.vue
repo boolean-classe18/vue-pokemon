@@ -1,10 +1,24 @@
 <template>
-    <div>
-        <ul>
-            <li v-for="(pokemon, index) in pokemons" :key="index">
-                {{ pokemon.name }}
-            </li>
-        </ul>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="d-flex flex-wrap justify-content-center">
+                    <div class="card m-2"
+                    style="width: 18rem;"
+                    v-for="(pokemon, index) in pokemons" :key="index">
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                {{ pokemon.name }}
+                            </h5>
+                            <p>
+                                {{ pokemon.url }}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
 </template>
 <script>
