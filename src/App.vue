@@ -3,19 +3,21 @@
         <CustomTitle :titleText="message" :subtitleText="subMessage"/>
         <img alt="Vue logo" src="./assets/logo.png" />
         <!-- <HelloWorld msg="Welcome to Your Vue.js App" /> -->
-
+        <Pokemons />
     </div>
 </template>
 
 <script>
 // import HelloWorld from "./components/HelloWorld.vue";
 import CustomTitle from "./components/CustomTitle.vue";
+import Pokemons from "./pages/Pokemons.vue";
 
 export default {
     name: "App",
     components: {
         // HelloWorld
-        CustomTitle
+        CustomTitle,
+        Pokemons,
     },
     data() {
         return {
