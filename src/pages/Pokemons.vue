@@ -3,27 +3,20 @@
         <div class="row">
             <div class="col-12">
                 <div class="d-flex flex-wrap justify-content-center">
-                    <div class="card m-2"
-                    style="width: 18rem;"
-                    v-for="(pokemon, index) in pokemons" :key="index">
-                        <div class="card-body">
-                            <h5 class="card-title">
-                                {{ pokemon.name }}
-                            </h5>
-                            <p>
-                                {{ pokemon.url }}
-                            </p>
-                        </div>
-                    </div>
+                    <Card v-for="(pokemon, index) in pokemons"
+                    :key="index" :name="pokemon.name" :text="pokemon.url" />
                 </div>
             </div>
         </div>
-
     </div>
 </template>
 <script>
+    import Card from "./../components/Card.vue";
     export default {
         name: 'Pokemons',
+        components: {
+            Card
+        },
         data() {
             return {
                 pokemons: []
