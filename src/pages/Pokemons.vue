@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <Form @newSearch="searchPokemon" />
+                <Form @newSearch="searchPokemon" @resetSearch="showAll" />
                 <div class="d-flex flex-wrap justify-content-center" v-if="showSinglePokemon">
                     <Single :name="singlePokemon.name"
                     :type="singlePokemon.types[0].type.name"
@@ -48,6 +48,9 @@
                     self.singlePokemon = response.data;
                     self.showSinglePokemon = true;
                 });
+            },
+            showAll() {
+                this.showSinglePokemon = false;
             }
         }
     }
